@@ -27,6 +27,8 @@ jobs:
           docker images
       - name: Deploy to minikube
         run: kubectl apply -f k8s-node-app.yaml
+      - name: Wait for pods to be ready
+        run: sleep 30
       - name: Inspect Pods
         run: kubectl get pods -o wide
       - name: Test service URLs
