@@ -14,8 +14,8 @@ jobs:
           minikube-version: "latest"
           driver: docker
       - name: Set kubectl context for minikube
-          run: |
-            kubectl config use-context minikube
+        run: |
+          kubectl config use-context minikube
       - name: Try the cluster !
         run: kubectl get pods -A
       - name: Build image
